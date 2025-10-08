@@ -1,6 +1,6 @@
 # Advanced Features
 
-###### Yes, I know I mispelled Advanced
+###### Yes, I know I mispelled Advanced on the Thunderstore page
 
 # Features
 
@@ -48,3 +48,4 @@ For details, see https://creativecommons.org/publicdomain/zero/1.0/
 
 
 - Making the original features
+
