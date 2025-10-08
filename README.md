@@ -1,6 +1,6 @@
 # Advanced Features
 
-This mod takes features out of the Advanced Company mod.
+###### Yes, I know I mispelled Advanced
 
 # Features
 
@@ -8,7 +8,7 @@ This mod takes features out of the Advanced Company mod.
 
 - Death spectating UI for having the screen less messy
 
-# Peformance Report UI
+# Performance Report UI
 
 ## Vanilla
 ![OldPerformanceReport](https://i.imgur.com/Wfwbsda.png)
@@ -45,5 +45,6 @@ For details, see https://creativecommons.org/publicdomain/zero/1.0/
 # Credit
 
 **Potatoepet**
+
 
 - Making the original features
