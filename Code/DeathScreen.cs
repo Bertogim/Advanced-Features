@@ -11,9 +11,10 @@ using UnityEngine.UI;
 using SteamImage = Steamworks.Data.Image;
 using UIImage = UnityEngine.UI.Image;
 using System.Linq;
-using AdvanceFeatures;
+using AdvancedFeatures;
+using BepInEx;
 
-namespace AdvanceFeatures
+namespace AdvancedFeatures
 {
     // Handles the custom spectate view that appears when players die
     [HarmonyPatch]
@@ -211,7 +212,7 @@ namespace AdvanceFeatures
             if (Plugin.EnableAdvancedLogging.Value)
                 Plugin.Log.LogInfo("Updating death spectate boxes");
             if (Plugin.EnableAdvancedLogging.Value)
-                Plugin.Log.LogInfo("Updating death spectate boxes - advanced");
+                Plugin.Log.LogInfo("Updating death spectate boxes - Advanced");
             if (PlayerBoxPrefab == null)
             {
                 Plugin.Log.LogError("PlayerBox prefab missing, cannot update spectators");

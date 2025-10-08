@@ -13,7 +13,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AdvanceFeatures
+namespace AdvancedFeatures
 {
     // Provides a replacement end of round screen with more information
     [HarmonyPatch]
@@ -252,7 +252,7 @@ namespace AdvanceFeatures
             if (Plugin.EnableAdvancedLogging.Value)
                 Plugin.Log.LogInfo("Animating performance report UI");
             Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
+            Cursor.visible = !Plugin.EnablePerformanceReportCameraScroll.Value;
 
             yield return new WaitForSeconds(1f);
 

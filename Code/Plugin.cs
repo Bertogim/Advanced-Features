@@ -7,9 +7,9 @@ using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
 
-namespace AdvanceFeatures
+namespace AdvancedFeatures
 {
-    [BepInPlugin("com.example.advancefeatures", "Advance Features", "1.0.9")]
+    [BepInPlugin("com.example.Advancedfeatures", "Advanced Features", "1.1.0")]
     public class Plugin : BaseUnityPlugin
     {
 
@@ -20,6 +20,7 @@ namespace AdvanceFeatures
         public static ConfigEntry<float> BounceSmoothness;
         public static ConfigEntry<bool> ShowAvatars;
         public static ConfigEntry<bool> EnableAdvancedLogging;
+        public static ConfigEntry<bool> EnablePerformanceReportCameraScroll;
         internal static ManualLogSource Log;
         private Harmony _harmony;
         private AssetBundle _assetBundle;
@@ -27,7 +28,7 @@ namespace AdvanceFeatures
         private void Awake()
         {
             Log = Logger;
-            Log.LogInfo("Initializing Advance Features plugin");
+            Log.LogInfo("Initializing Advanced Features plugin");
 
             EnablePerformanceUI = Config.Bind(
                 "General",
@@ -72,19 +73,25 @@ namespace AdvanceFeatures
                 false,
                 "If true, logs when the mod does anything"
             );
+            EnablePerformanceReportCameraScroll = Config.Bind(
+                 "Performance Report UI",
+                 "EnableCameraScroll",
+                 false,
+                 "If true, hides cursor and enables scroll wheel for all lists during performance report"
+             );
             if (EnableAdvancedLogging.Value)
                 Log.LogInfo("Advanced logging enabled");
 
-            _harmony = new Harmony("com.example.advancefeatures");
+            _harmony = new Harmony("com.example.Advancedfeatures");
             _harmony.PatchAll();
             Log.LogInfo("Harmony patches applied");
 
-            string bundlePath = Path.Combine(Path.GetDirectoryName(Info.Location)!, "advancefeaturesassets");
+            string bundlePath = Path.Combine(Path.GetDirectoryName(Info.Location)!, "advancedfeaturesassets");
             try
             {
                 if (File.Exists(bundlePath))
                 {
-                    Log.LogInfo("Loading asset bundle for Advance Features");
+                    Log.LogInfo("Loading asset bundle for Advanced Features");
                     _assetBundle = AssetBundle.LoadFromFile(bundlePath);
                     Endscreen.LoadAssets(_assetBundle);
                     DeathScreen.LoadAssets(_assetBundle);
